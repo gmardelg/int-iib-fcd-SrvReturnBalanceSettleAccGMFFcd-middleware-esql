@@ -1,5 +1,5 @@
 <srvConfiguration>
-	<service>
+	<service> 
 		<type>DYNAMIC.ROUTE</type>
 		<name>AddReturnBalanceSettleAccGMF</name>
 		<serviceStatus>1</serviceStatus>
