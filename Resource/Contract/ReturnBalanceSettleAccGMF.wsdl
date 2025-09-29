@@ -6,7 +6,7 @@
 
     <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:aval="urn://grupoaval.com/xsd/ifx/" xmlns:avalv2="urn://grupoaval.com/xsd/ifx/v2/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn://grupoaval.com/xsd/ifx/">
       <xsd:import namespace="urn://grupoaval.com/xsd/ifx/v2/"/>
-      <xsd:simpleType name="City_Type">
+      <xsd:simpleType name="City_Type"> 
 		<xsd:restriction base="xsd:string"/>
 	  </xsd:simpleType>
       <xsd:element name="City" type="aval:City_Type"/>
