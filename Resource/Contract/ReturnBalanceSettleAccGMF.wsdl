@@ -365,6 +365,122 @@
 	  <xsd:element name="SessKey" type="xsd:string"/>
   </xsd:schema>
 
+<xsd:schema targetNamespace="urn://grupoaval.com/accounts/v1/">
+  
+  <!-- Tipos para QueryAccountBalance -->
+  <xsd:complexType name="QueryAcctBalRq_Type">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:RqUID"/>
+      <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:MsgRqHdr"/>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:AcctId"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="QueryAcctBalRs_Type">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:Status"/>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:RqUID"/>
+      <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:AvailableAmt"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- Tipos para UpdateAccountStatus -->
+  <xsd:complexType name="UpdateAcctStatusRq_Type">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:RqUID"/>
+      <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:MsgRqHdr"/>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:AcctId"/>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:StatusCode"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:complexType name="UpdateAcctStatusRs_Type">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:Status"/>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:RqUID"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <!-- Elementos raíz -->
+  <xsd:element name="QueryAcctBalRq" type="v1:QueryAcctBalRq_Type"/>
+  <xsd:element name="QueryAcctBalRs" type="v1:QueryAcctBalRs_Type"/>
+  <xsd:element name="UpdateAcctStatusRq" type="v1:UpdateAcctStatusRq_Type"/>
+  <xsd:element name="UpdateAcctStatusRs" type="v1:UpdateAcctStatusRs_Type"/>
+  
+</xsd:schema>
+
+<!-- 2. Agregar mensajes después de los existentes -->
+<wsdl:message name="queryAccountBalanceRequest">
+  <wsdl:part element="v1:QueryAcctBalRq" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="queryAccountBalanceResponse">
+  <wsdl:part element="v1:QueryAcctBalRs" name="parameters"/>
+</wsdl:message>
+
+<wsdl:message name="updateAccountStatusRequest">
+  <wsdl:part element="v1:UpdateAcctStatusRq" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="updateAccountStatusResponse">
+  <wsdl:part element="v1:UpdateAcctStatusRs" name="parameters"/>
+</wsdl:message>
+
+<!-- 3. Agregar operaciones al portType -->
+<wsdl:portType name="ReturnBalanceSettleAccGMF">
+  <wsdl:operation name="AddReturnBalanceSettleAccGMF">
+    <wsdl:input message="v1:addRtnBcSettleAccGMFRequest"/>
+    <wsdl:output message="v1:addRtnBcSettleAccGMFResponse"/>
+  </wsdl:operation>
+  
+  <!-- NUEVA OPERACIÓN 1 -->
+  <wsdl:operation name="QueryAccountBalance">
+    <wsdl:input message="v1:queryAccountBalanceRequest"/>
+    <wsdl:output message="v1:queryAccountBalanceResponse"/>
+  </wsdl:operation>
+  
+  <!-- NUEVA OPERACIÓN 2 -->
+  <wsdl:operation name="UpdateAccountStatus">
+    <wsdl:input message="v1:updateAccountStatusRequest"/>
+    <wsdl:output message="v1:updateAccountStatusResponse"/>
+  </wsdl:operation>
+</wsdl:portType>
+
+<!-- 4. Agregar operaciones al binding -->
+<wsdl:binding name="ReturnBalanceSettleAccGMF" type="v1:ReturnBalanceSettleAccGMF">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  
+  <wsdl:operation name="AddReturnBalanceSettleAccGMF">
+    <soap:operation soapAction="urn://grupoaval.com/accounts/v1/AddReturnBalanceSettleAccGMF"/>
+    <wsdl:input>
+      <soap:body use="literal"/>
+    </wsdl:input>
+    <wsdl:output>
+      <soap:body use="literal"/>
+    </wsdl:output>
+  </wsdl:operation>
+  
+  <!-- NUEVA OPERACIÓN 1 BINDING -->
+  <wsdl:operation name="QueryAccountBalance">
+    <soap:operation soapAction="urn://grupoaval.com/accounts/v1/QueryAccountBalance"/>
+    <wsdl:input>
+      <soap:body use="literal"/>
+    </wsdl:input>
+    <wsdl:output>
+      <soap:body use="literal"/>
+    </wsdl:output>
+  </wsdl:operation>
+  
+  <!-- NUEVA OPERACIÓN 2 BINDING -->
+  <wsdl:operation name="UpdateAccountStatus">
+    <soap:operation soapAction="urn://grupoaval.com/accounts/v1/UpdateAccountStatus"/>
+    <wsdl:input>
+      <soap:body use="literal"/>
+    </wsdl:input>
+    <wsdl:output>
+      <soap:body use="literal"/>
+    </wsdl:output>
+  </wsdl:operation>
+</wsdl:binding>
+
   <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn://grupoaval.com/accounts/v1/" xmlns:Q1="urn://grupoaval.com/xsd/ifx/">
       <xsd:import namespace="urn://grupoaval.com/xsd/ifx/"/>
   <xsd:complexType name="addRtnBcSettleAccGMFRequest_Type">
