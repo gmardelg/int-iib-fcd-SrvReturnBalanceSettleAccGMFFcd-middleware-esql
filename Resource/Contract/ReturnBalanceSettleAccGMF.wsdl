@@ -265,7 +265,7 @@
     <xsd:sequence>
       <xsd:element minOccurs="0" ref="aval:CustPermId"/>
       <xsd:element minOccurs="0" ref="aval:CustLoginId"/>
-      <xsd:element minOccurs="0" ref="aval:GovIssueIdent"/>
+      <xsd:element minOccurs="1" ref="aval:GovIssueIdent"/>
       <xsd:element maxOccurs="1" minOccurs="0" ref="aval:CustName"/>
     </xsd:sequence>
   </xsd:complexType>
@@ -331,7 +331,7 @@
       <xsd:element minOccurs="0" ref="aval:ClientApp"/>
       <xsd:element minOccurs="1" ref="avalv2:Channel"/>
       <xsd:element minOccurs="0" ref="aval:BankInfo"/>
-      <xsd:element minOccurs="0" ref="avalv2:ClientDt"/>
+      <xsd:element minOccurs="1" ref="avalv2:ClientDt"/>
       <xsd:element minOccurs="1" ref="avalv2:IPAddr"/>
       <xsd:element minOccurs="0" ref="avalv2:SessKey"/>
       <xsd:element minOccurs="0" ref="aval:UserId"/>
