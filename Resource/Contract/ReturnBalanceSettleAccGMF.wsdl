@@ -150,8 +150,8 @@
       <xsd:element minOccurs="0" ref="aval:BankIdType"/>
       <xsd:element ref="aval:BankId"/>
       <xsd:element maxOccurs="1" minOccurs="0" ref="aval:RefInfo"/>
-      <xsd:element minOccurs="0" ref="aval:Name"/>
-      <xsd:element minOccurs="0" ref="aval:BranchId"/>
+      <xsd:element minOccurs="1" ref="aval:Name"/>
+      <xsd:element minOccurs="1" ref="aval:BranchId"/>
       <xsd:element minOccurs="0" ref="aval:BranchName"/>
       <xsd:element minOccurs="0" ref="aval:City"/>
       <xsd:element minOccurs="0" ref="aval:StateProv"/>
@@ -252,9 +252,9 @@
       <xsd:element name="ClientApp" type="aval:ClientApp_Type"/>
       <xsd:complexType name="ClientApp_Type">
     <xsd:sequence>
-      <xsd:element minOccurs="0" ref="aval:Org"/>
-      <xsd:element minOccurs="0" ref="aval:Name"/>
-      <xsd:element minOccurs="0" ref="aval:Version"/>
+      <xsd:element minOccurs="1" ref="aval:Org"/>
+      <xsd:element minOccurs="1" ref="aval:Name"/>
+      <xsd:element minOccurs="1" ref="aval:Version"/>
     </xsd:sequence>
   </xsd:complexType>
       <xsd:element name="IdentSerialNum" type="aval:IdentSerialNum_Type"/>
@@ -265,7 +265,7 @@
     <xsd:sequence>
       <xsd:element minOccurs="0" ref="aval:CustPermId"/>
       <xsd:element minOccurs="0" ref="aval:CustLoginId"/>
-      <xsd:element minOccurs="0" ref="aval:GovIssueIdent"/>
+      <xsd:element minOccurs="1" ref="aval:GovIssueIdent"/>
       <xsd:element maxOccurs="1" minOccurs="0" ref="aval:CustName"/>
     </xsd:sequence>
   </xsd:complexType>
@@ -329,16 +329,16 @@
   <xsd:complexType name="MsgRqHdr_Type">
     <xsd:sequence>
       <xsd:element minOccurs="0" ref="aval:ClientApp"/>
-      <xsd:element minOccurs="0" ref="avalv2:Channel"/>
+      <xsd:element minOccurs="1" ref="avalv2:Channel"/>
       <xsd:element minOccurs="0" ref="aval:BankInfo"/>
-      <xsd:element minOccurs="0" ref="avalv2:ClientDt"/>
-      <xsd:element minOccurs="0" ref="avalv2:IPAddr"/>
+      <xsd:element minOccurs="1" ref="avalv2:ClientDt"/>
+      <xsd:element minOccurs="1" ref="avalv2:IPAddr"/>
       <xsd:element minOccurs="0" ref="avalv2:SessKey"/>
       <xsd:element minOccurs="0" ref="aval:UserId"/>
       <xsd:element minOccurs="0" ref="avalv2:KeyAcctId"/>
       <xsd:element ref="avalv2:Reverse"/>
       <xsd:element ref="avalv2:Language"/>
-      <xsd:element minOccurs="0" ref="avalv2:NextDay"/>
+      <xsd:element minOccurs="1" ref="avalv2:NextDay"/>
     </xsd:sequence>
   </xsd:complexType>
 
