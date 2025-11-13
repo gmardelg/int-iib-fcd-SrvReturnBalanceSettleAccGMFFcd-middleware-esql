@@ -60,7 +60,7 @@
       <xsd:element name="IdentType" type="aval:OpenEnum_Type"/>
       <xsd:element name="BranchId" type="xsd:string"/>
       <xsd:element name="Org" type="xsd:string"/>
-      <xsd:element name="ClientDt" type="xsd:string"/>
+      <xsd:element name="ClientDt" type="xsd:dateTime"/>
       <xsd:element name="BankId" type="xsd:string"/>
       <xsd:element name="CustPermId" type="xsd:string"/>
       <xsd:element name="Phone" type="xsd:string"/>
