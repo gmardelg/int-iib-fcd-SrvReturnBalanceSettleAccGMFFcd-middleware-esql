@@ -14,7 +14,7 @@
 			</precall>
 			<poscall>
 				<name>SrvReturnBalanceSettleAccGMFAST</name>
-				<protocol>WS</protocol>
+				<protocol>HTTPS</protocol>
 				<nameProvider>AST</nameProvider>
 				<queueName>MQINP.RTNBALANCESETTLEACC.AST.REQ</queueName>
 				<baseURL>https://10.213.130.25:55654</baseURL>
