@@ -17,7 +17,7 @@
 				<protocol>WS</protocol>
 				<nameProvider>AST</nameProvider>
 				<queueName>MQINP.RTNBALANCESETTLEACC.AST.REQ</queueName>
-				<baseURL>https://10.213.130.25:55654</baseURL>
+				<endpoint>https://{ENDPOINT-INT}:55654/gmf/v0/gmf/update</endpoint>
 				<timeOut>10</timeOut>
 			</poscall>
 			<callOnlFcRev>
