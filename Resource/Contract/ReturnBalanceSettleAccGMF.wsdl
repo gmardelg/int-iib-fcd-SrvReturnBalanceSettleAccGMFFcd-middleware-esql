@@ -46,7 +46,7 @@
       <xsd:element name="CryptType" type="aval:OpenEnum_Type"/>
       <xsd:element name="EndDt" type="xsd:string"/>
       <xsd:element name="Count" type="xsd:long"/>	  
-      <xsd:element name="RqUID" type="aval:UUID_Type"/>
+      <xsd:element name="" type="aval:UUID_Type"/>
       <xsd:element name="ApprovalId" type="xsd:string"/>	  
       <xsd:element name="ContentType" type="aval:OpenEnum_Type"/>
       <xsd:element name="CurRate" type="xsd:decimal"/>
@@ -379,7 +379,7 @@
   </xsd:complexType>
   <xsd:complexType name="RtnBcSettleAccRq_Type">
     <xsd:sequence>
-      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:RqUID"/>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:OTroUID"/>
       <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:MsgRqHdr"/>
       <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:CustId"/>
 	  <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:ProductId"/>
