@@ -379,7 +379,7 @@
   </xsd:complexType>
   <xsd:complexType name="RtnBcSettleAccRq_Type">
     <xsd:sequence>
-      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:OTroUID"/>
+      <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:RqUID"/>
       <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:MsgRqHdr"/>
       <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:CustId"/>
 	  <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:ProductId"/>
