@@ -29,7 +29,7 @@
       <xsd:element name="Desc" type="xsd:string"/>
       <xsd:element name="Channel" type="xsd:string"/>
       <xsd:element name="StartDt" type="xsd:dateTime"/>
-	  <xsd:element name="EffDt" type="xsd:dateTime"/>
+	  <xsd:element name="EffDt" type="xsd:string"/>
       <xsd:element name="ServiceCode" type="xsd:string"/>
       <xsd:element name="GovIssueIdentType" type="aval:OpenEnum_Type"/>
       <xsd:element name="CustLoginId" type="xsd:string"/>
