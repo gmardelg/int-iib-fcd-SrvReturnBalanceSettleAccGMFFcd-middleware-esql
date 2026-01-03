@@ -13,7 +13,7 @@
       <xsd:element name="TransactionNumber" type="xsd:string"/>
       <xsd:element name="StatusCode" type="xsd:long"/>
       <xsd:element name="GovOrg" type="aval:OpenEnum_Type"/>
-      <xsd:element name="OrgDt" type="xsd:dateTime"/>
+      <xsd:element name="OrgDt" type="xsd:dat"/>
       <xsd:element name="AddrType" type="aval:OpenEnum_Type"/>
       <xsd:element name="ExpDt" type="xsd:dateTime"/>
       <xsd:element name="RefId" type="aval:Identifier_Type"/>
