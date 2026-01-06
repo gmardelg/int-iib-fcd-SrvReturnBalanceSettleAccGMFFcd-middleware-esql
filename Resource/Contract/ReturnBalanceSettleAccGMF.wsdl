@@ -292,7 +292,7 @@
       <xsd:element name="AdditionalStatus" type="aval:AdditionalStatus_Type"/>
       <xsd:complexType name="AdditionalStatus_Type">
     <xsd:sequence>
-      <xsd:element minOccurs="0" ref="aval:StatusCodee"/>
+      <xsd:element minOccurs="0" ref="aval:StatusCode"/>
       <xsd:element minOccurs="0" ref="aval:ServerStatusCode"/>
       <xsd:element minOccurs="0" ref="aval:Severity"/>
       <xsd:element minOccurs="0" ref="aval:StatusDesc"/>
