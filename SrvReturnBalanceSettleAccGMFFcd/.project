@@ -4,6 +4,7 @@
 	<comment></comment>
 	<projects>
 		<project>Commons</project>
+		<project>ESB_Common_Lib_BPP_MFW</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
