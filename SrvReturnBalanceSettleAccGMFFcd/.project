@@ -2,7 +2,7 @@
 <projectDescription>
 	<name>SrvReturnBalanceSettleAccGMFFcd</name>
 	<comment></comment>
-	<projects>
+	<projects> 
 		<project>Commons</project>
 	</projects>
 	<buildSpec>
