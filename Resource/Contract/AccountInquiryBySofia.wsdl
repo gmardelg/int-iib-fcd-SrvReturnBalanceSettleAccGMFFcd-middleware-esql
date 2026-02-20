@@ -704,7 +704,6 @@
 <xsd:element name="CreateRefId" type="aval:Identifier_Type"/>
 <xsd:element name="ExpDt" type="xsd:dateTime"/>
 <xsd:element name="CardBrand" type="xsd:string"/>
-<xsd:element name="EffDt" type="xsd:dateTime"/>
 <xsd:element name="Pswd" type="xsd:string"/>
 <xsd:element name="EndDt" type="xsd:dateTime"/>
 <xsd:element name="ApprovalId" type="xsd:string"/>
@@ -741,7 +740,6 @@
 <xsd:element name="StatusDesc" type="xsd:string"/>
 <xsd:element name="PaymentForm" type="aval:OpenEnum_Type"/>
 <xsd:element name="Count" type="xsd:long"/>
-<xsd:element name="StartDt" type="xsd:dateTime"/>
 <xsd:element name="NoteNum" type="xsd:string"/>
 <xsd:element name="MediaType" type="aval:OpenEnum_Type"/>
 <xsd:element name="TaxName" type="xsd:string"/>
@@ -825,7 +823,6 @@
 <xsd:element name="SelRangePaidDt" type="aval:SelRangeDt_Type"/>
 <xsd:element name="CardNumber" type="xsd:string"/>
 <xsd:element name="PendExpDays" type="xsd:long"/>
-<xsd:element name="IssDt" type="xsd:dateTime"/>
 <xsd:element name="AlertStatus" type="xsd:string"/>
 <xsd:element name="EstablishDt" type="xsd:dateTime"/>
 <xsd:element name="DaysCall" type="xsd:long"/>
