@@ -410,14 +410,14 @@
     <wsdl:part element="v1:addRtnBcSettleAccGMFResponse" name="parameters"/>
   </wsdl:message>
   <wsdl:portType name="ReturnBalanceSettleAccGMF">
-    <wsdl:operation name="TestOperation">
+    <wsdl:operation name="AddReturnBalanceSettleAccGMF">
       <wsdl:input message="v1:addRtnBcSettleAccGMFRequest"/>
       <wsdl:output message="v1:addRtnBcSettleAccGMFResponse"/>
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ReturnBalanceSettleAccGMF" type="v1:ReturnBalanceSettleAccGMF">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="TestOperation">
+    <wsdl:operation name="AddReturnBalanceSettleAccGMF">
       <soap:operation soapAction="urn://grupoaval.com/accounts/v1/AddReturnBalanceSettleAccGMF"/>
       <wsdl:input>
         <soap:body use="literal"/>
