@@ -10,6 +10,9 @@
     <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/SrvReturnBalanceSettleAccGMFFcd/icons/full/obj30/ReturnBalanceSettleAccGMFFcdWS_RESP.gif"/>
     <composition>
 
+  <nodes xmi:type="ComIbmMQInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="136,126" queueName="MQINP.RTNBALANCESETTLEACC.FCD.WS.RESP" messageDomainProperty="BLOB" transactionMode="no">
+        <translation xmi:type="utility:ConstantString" string="MQINP.FCD.WS.RESP"/>
+      </nodes>
 
       <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="321,126" computeExpression="esql://routine/common.modules.fcd#Facade_GetReplyIdentifierLog_IFX_WS.Main" computeMode="destinationAndMessage">
         <translation xmi:type="utility:ConstantString" string="CmpGetReplyIdentifierLog"/>
