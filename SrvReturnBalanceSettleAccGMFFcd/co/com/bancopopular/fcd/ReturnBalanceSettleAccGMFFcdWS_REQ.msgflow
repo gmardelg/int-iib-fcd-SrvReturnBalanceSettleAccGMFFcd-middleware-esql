@@ -26,7 +26,7 @@
         <translation xmi:type="utility:ConstantString" string="ThrowInqConfigApp"/>
         <shortDescription xmi:type="utility:ConstantString" string="No se encuentra configuración de servicio."/>
       </nodes>
-      <nodes xmi:type="ComIbmSOAPInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="116,172" wsdlOperationMode="gateway" useHTTPTransport="true" urlSelector="/accountss/SSL/ReturnBalanceSettleAccGMF" useHTTPS="true" maxClientWaitTime="30" parserXmlnscBuildTreeUsingXMLSchema="false" validateMaster="none">
+      <nodes xmi:type="ComIbmSOAPInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="116,172" wsdlOperationMode="gateway" useHTTPTransport="true" urlSelector="/accounts/SSL/ReturnBalanceSettleAccGMF" useHTTPS="true" maxClientWaitTime="30" parserXmlnscBuildTreeUsingXMLSchema="false" validateMaster="none">
         <translation xmi:type="utility:ConstantString" string="SOAPInput_HTTPS"/>
       </nodes>
       <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="402,12" queueName="EXCEPTION.REGISTER.REQ" transactionMode="no">
