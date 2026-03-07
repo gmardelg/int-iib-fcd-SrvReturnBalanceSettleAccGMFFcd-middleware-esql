@@ -352,14 +352,14 @@
     <wsdl:part element="v1:ModifyOverdraftLineResponse" name="parameters" />
   </wsdl:message>
   <wsdl:portType name="SrvOverdraftLine_ModifyOverdraftLine">
-    <wsdl:operation name="ModifyOverdraftLine1">
+    <wsdl:operation name="ModifyOverdraftLine">
       <wsdl:input message="v1:ModifyOverdraftLineRequest" />
       <wsdl:output message="v1:ModifyOverdraftLineResponse" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SrvOverdraftLineSOAP_ModifyOverdraftLine" type="v1:SrvOverdraftLine_ModifyOverdraftLine">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="ModifyOverdraftLine1">
+    <wsdl:operation name="ModifyOverdraftLine">
       <soap:operation soapAction="urn://grupoaval.com/prodschnsmngt/v1/ModifyOverdraftLine" />
       <wsdl:input>
         <soap:body use="literal" />
