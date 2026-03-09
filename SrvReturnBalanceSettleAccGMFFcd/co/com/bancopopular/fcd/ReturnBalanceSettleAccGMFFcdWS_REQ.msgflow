@@ -13,7 +13,7 @@
       <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="589,169" dataSource="AUDITORIA" computeExpression="esql://routine/common.modules.fcd#Facade_RouteMsg_WS_V3.Main" computeMode="destinationAndMessage">
         <translation xmi:type="utility:ConstantString" string="CmpRouteMsg"/>
       </nodes>
-      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="711,170" destinationMode="list" transactionMode="no" request="true" replyToQ="MQINP.RTNBALANCESETTLEACC.FCD.WS.RESP">
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="711,170" destinationMode="list" transactionMode="yes" request="true" replyToQ="MQINP.RTNBALANCESETTLEACC.FCD.WS.RESP">
         <translation xmi:type="utility:ConstantString" string="MQOUT.GENERIC.SRV.REQ"/>
       </nodes>
       <nodes xmi:type="ComIbmSOAPReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="291,82" transactionMode="no">
