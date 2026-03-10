@@ -38,7 +38,7 @@
       <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_9" location="275,168" computeExpression="esql://routine/common.modules.fcd#Facade_ReceiveMsg_WS_V2.Main" computeMode="destinationAndMessage">
         <translation xmi:type="utility:ConstantString" string="CmpReceiveMsg"/>
       </nodes>
-     <nodes xmi:type="SRRetrieveEntity.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_10" location="419,169" name="Default"  depthPolicy="MatchOnly">
+     <nodes xmi:type="SRRetrieveEntity.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_10" location="419,169" name="Default" serviceVersion="1.0"  depthPolicy="MatchOnly">
         <translation xmi:type="utility:ConstantString" string="RLGetConfigParams"/>
       </nodes>
 
