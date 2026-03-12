@@ -1,0 +1,436 @@
+openapi: 3.0.0
+info:
+  title: SrvUpdateContactAccountAST
+  description: Esta API permite la modificación de un contacto específico en la agenda de AST para transferencias.
+  contact:
+    email: notificacionESB@bancopopular.com.co
+  version: 1.0.0
+servers:
+- url: /customerManagement/v1/Affiliation
+paths:
+  /UpdateContact:
+    post:
+      tags:
+      - UpdateContact
+      summary: Modifica un contacto en la agenda de AST para transferencias
+      description: Modifica un contacto específico en la agenda de AST para transferencias
+      operationId: postUpdateContactAccount
+      parameters:
+      - name: X-RqUID
+        in: header
+        description: Identificador unico del mensaje
+        required: true
+        schema:
+          maxLength: 32
+          minLength: 1
+          type: string
+        example: "201901160925"
+      - name: X-Channel
+        in: header
+        description: Canal origen de consumo de la transaccion
+        required: true
+        schema:
+          maxLength: 20
+          minLength: 0
+          type: string
+          enum:
+          - BM
+          - PB          
+        example: BM
+      - name: X-CompanyId
+        in: header
+        description: Codigo de empresa que realiza la invocacion
+        required: true
+        schema:
+          maximum: 10
+          minimum: 0
+          type: integer
+          format: int32
+        example: 0002
+      - name: X-IPAddr
+        in: header
+        description: Ip de dispositivo
+        required: false
+        schema:
+          maxLength: 15
+          minLength: 0
+          type: string
+          format: ipv4
+        example: 179.1.89.18
+      - name: X-Language
+        in: header
+        description: "especifica lenguaje usado, sigue el estandar ISO 639 mas un guion mas el codigo de pais segun la norma ISO 3166"
+        schema:
+          maxLength: 5
+          minLength: 5
+          type: string
+        example: es-CO
+      - name: X-ClientDt
+        in: header
+        description: Fecha de transacción - AAAA-MM-DDThh:mm:ss
+        required: false
+        schema:
+          type: string
+          format: date-time
+        example: 2024-08-09T20:00:00
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateContactAccountRequest'
+        required: true
+      responses:
+        "201":
+          description: Transaccion Exitosa
+          headers:
+            X-ApprovalId:
+              description: Numero de autorizacion de la transaccion.
+              schema:
+                maxLength: 50
+                minLength: 0
+                type: string
+            X-RqUID:
+              description: Identificador unico de la invocacion.
+              schema:
+                maxLength: 32
+                minLength: 1
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateContactAccountResponse'
+        "206":
+          description: Error en la transaccion
+          headers:
+            X-ApprovalId:
+              description: Numero de autorizacion de la transaccion.
+              schema:
+                maxLength: 50
+                minLength: 0
+                type: string
+            X-RqUID:
+              description: Identificador unico de la invocacion.
+              schema:
+                maxLength: 32
+                minLength: 1
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateContactAccountResponseBusinessError'
+        "400":
+          description: Peticion incorrecta
+          headers:
+            X-ApprovalId:
+              description: Numero de autorizacion de la transaccion.
+              schema:
+                maxLength: 50
+                minLength: 0
+                type: string
+            X-RqUID:
+              description: Identificador unico de la invocacion.
+              schema:
+                maxLength: 32
+                minLength: 1
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateContactAccountResponseError'
+        "500":
+          description: Ha ocurrido un error en la invocacion
+          headers:
+            X-ApprovalId:
+              description: Numero de autorizacion de la transaccion.
+              schema:
+                maxLength: 50
+                minLength: 0
+                type: string
+            X-RqUID:
+              description: Identificador unico de la invocacion.
+              schema:
+                maxLength: 32
+                minLength: 1
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateContactAccountResponseError'
+        "504":
+          description: Timeout
+          headers:
+            X-ApprovalId:
+              description: Numero de autorizacion de la transaccion.
+              schema:
+                maxLength: 50
+                minLength: 0
+                type: string
+            X-RqUID:
+              description: Identificador unico de la invocacion.
+              schema:
+                maxLength: 32
+                minLength: 1
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateContactAccountResponseError'
+        "412":
+          description: RqUID es requerido
+          headers:
+            X-ApprovalId:
+              description: Numero de autorizacion de la transaccion.
+              schema:
+                maxLength: 50
+                minLength: 0
+                type: string
+            X-RqUID:
+              description: Identificador unico de la invocacion.
+              schema:
+                maxLength: 32
+                minLength: 1
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateContactAccountResponseError'
+        "408":
+          description: Timeout del backend
+          headers:
+            X-ApprovalId:
+              description: Numero de autorizacion de la transaccion.
+              schema:
+                maxLength: 50
+                minLength: 0
+                type: string
+            X-RqUID:
+              description: Identificador unico de la invocacion.
+              schema:
+                maxLength: 32
+                minLength: 1
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateContactAccountResponseError'
+        "420":
+          description: Error en el backend
+          headers:
+            X-ApprovalId:
+              description: Numero de autorizacion de la transaccion.
+              schema:
+                maxLength: 50
+                minLength: 0
+                type: string
+            X-RqUID:
+              description: Identificador unico de la invocacion.
+              schema:
+                maxLength: 32
+                minLength: 1
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateContactAccountResponseError'
+components:
+  schemas:
+    UpdateContactAccountRequest:
+      type: object
+      properties:
+        ContactInfo:
+          $ref: '#/components/schemas/ContactInfo'
+    UpdateContactAccountResponse:
+      type: object
+      properties:
+        MsgRsHdr:
+          $ref: '#/components/schemas/MsgRsHdr'
+        ContactInfo:
+          $ref: '#/components/schemas/ContactInfo'
+    UpdateContactAccountResponseBusinessError:
+      type: object
+      properties:
+        MsgRsHdr:
+          $ref: '#/components/schemas/MsgRsHdr'
+    UpdateContactAccountResponseError:
+      type: object
+      properties:
+        MsgRsHdr:
+          $ref: '#/components/schemas/MsgRsHdr'
+    MsgRsHdr:
+      required:
+      - Status
+      type: object
+      properties:
+        Status:
+          $ref: '#/components/schemas/Status'
+    Status:
+      required:
+      - Severity
+      - StatusCode
+      type: object
+      properties:
+        StatusCode:
+          maximum: 99999
+          minimum: 0
+          type: integer
+          description: Codigo de respuesta
+          example: 0
+        ServerStatusCode:
+          maximum: 10
+          minimum: 0
+          type: integer
+          description: Codigo de respuesta del servidor
+          example: 0
+        Severity:
+          maxLength: 10
+          minLength: 4
+          type: string
+          description: Codigo de severidad de la respuesta
+          enum:
+          - Info
+          - Warning
+          - Error
+          example: "Info"
+        StatusDesc:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: Explicacion asociada al statusCode
+          example: "Transaccion Exitosa"
+        AdditionalStatus:
+          $ref: '#/components/schemas/AdditionalStatus'
+        EndDt:
+          type: string
+          description: "Indica fecha de finalizacion, terminacion, etc."
+          format: date-time
+          example: "2026-01-29T14:21:19.065410"
+    AdditionalStatus:
+      type: object
+      properties:
+        StatusCode:
+          maximum: 99999
+          minimum: 0
+          type: integer
+          description: Codigo de respuesta
+          example: 0
+        ServerStatusCode:
+          maximum: 10
+          minimum: 0
+          type: integer
+          description: Codigo de respuesta del servidor
+          example: 0
+        Severity:
+          maxLength: 10
+          minLength: 4
+          type: string
+          description: Codigo de severidad de la respuesta
+          enum:
+          - Info
+          - Warning
+          - Error
+          example: "Info"
+        StatusDesc:
+          maxLength: 100
+          minLength: 0
+          type: string
+          description: Explicacion asociada al statusCode
+          example: "Transaccion Exitosa"
+    DepAcctId:
+      type: object
+      properties:
+        AcctId:
+          maxLength: 25
+          minLength: 1
+          type: string
+          description: Identificador de una cuenta
+          example: "50000000000"
+        AcctType:
+          maxLength: 3
+          minLength: 3
+          type: string
+          description: "Tipo de cuenta AHO: Ahorros COR: Corriente DPE: Depósito electrónico"
+          enum:
+          - AHO
+          - COR
+          - DPE
+        BankInfo:
+          $ref: '#/components/schemas/BankInfo'
+      required:
+      - AcctId
+      - AcctType
+    DepAcctIdTo:
+      type: object
+      properties:
+        DepAcctId:
+          $ref: '#/components/schemas/DepAcctId'
+    ContactInfo:
+      type: object
+      properties:
+        ContactId:
+          maximum: 999999999
+          minimum: 1
+          type: integer
+          description: Identificador del contacto dentro de la agenda. Campo requerido
+          example: 12345
+        ContactName:
+          maxLength: 100
+          minLength: 1
+          type: string
+          description: Nombre del contacto
+          example: "Juan Perez"
+        NickName:
+          maxLength: 50
+          minLength: 0
+          type: string
+          description: Alias del contacto
+          example: "Juanito"
+        GovIssueIdent:
+          $ref: '#/components/schemas/GovIssueIdent'
+        DepAcctIdTo:
+          $ref: '#/components/schemas/DepAcctIdTo'
+        Favorite:
+          type: boolean
+          description: Indica si se marca como favorita o no
+      required:
+      - ContactId
+    BankInfo:
+      type: object
+      properties:
+        BankId:
+          maxLength: 10
+          minLength: 1
+          type: string
+          description: Código del banco destino.
+          example: "2"
+        Name:
+          maxLength: 100
+          minLength: 1
+          type: string
+          description: Nombre del banco destino.
+          example: "Banco Popular"
+      required:
+      - BankId
+    GovIssueIdent:
+      type: object
+      properties:
+        GovIssueIdentType:
+          maxLength: 10
+          minLength: 2
+          type: string
+          description: "Tipo de identificacion emitida por el gobierno del pais *CC - Cedula de ciudadania *CE: Cedula extrangeria *NIT_NAT: NIT Persona Natural *NIT_JUR: NIT Persona Juridica *PAS: Pasaporte *RC: Registro civil *TI: Tarjeta de identidad *FD: Fideicomiso"        
+          enum:
+          - CC
+          - CE
+          - NIT_NAT
+          - NIT_JUR
+          - PAS
+          - RC
+          - TI
+          - FD
+          example: "CC"
+        IdentSerialNum:
+          maxLength: 20
+          minLength: 1
+          type: string
+          description: Numero de identificacion emitido por el gobierno
+          example: "1234567890"
