@@ -68,7 +68,7 @@
       <xsd:element name="BankIdType" type="aval:OpenEnum_Type" />
       <xsd:element name="ServerStatusCode" type="xsd:string" />
       <xsd:element name="RemainRec" type="xsd:boolean" />
-      <xsd:element name="IssDt" type="xsd:string" />
+      <xsd:element name="IssDt" type="xsd:dateTime" />
       <xsd:element name="ServerStatusDesc" type="xsd:string" />
       <xsd:element name="IPAddr" type="xsd:string" />
       <xsd:element name="Name" type="xsd:string" />
@@ -79,7 +79,7 @@
       <xsd:element name="RefId" type="aval:Identifier_Type" />
       <xsd:element name="ChkNum" type="xsd:string" />
       <xsd:element name="CurAmt" type="aval:CurrencyAmount_Type" />
-      <xsd:element name="ClientDt" type="xsd:string" />
+      <xsd:element name="ClientDt" type="xsd:dateTime" />
       <xsd:element name="CustLoginId" type="xsd:string" />
       <xsd:element name="RqUID" type="aval:UUID_Type" />
       <xsd:element name="Version" type="xsd:string" />
@@ -88,7 +88,7 @@
       <xsd:element name="GovIssueIdentType" type="aval:OpenEnum_Type" />
       <xsd:element name="CurRate" type="xsd:decimal" />
       <xsd:element name="Channel" type="xsd:string" />
-      <xsd:element name="ExpDt" type="xsd:string" />
+      <xsd:element name="ExpDt" type="xsd:dateTime" />
       <xsd:element name="CurCode" type="xsd:string" />
       <xsd:element name="BankId" type="xsd:string" />
       <xsd:element name="StatusDesc" type="xsd:string" />
@@ -319,7 +319,7 @@
       <xsd:element name="Version" type="xsd:string" />
       <xsd:element name="ServerStatusCode" type="xsd:string" />
       <xsd:element name="Language" type="xsd:string" />
-      <xsd:element name="NextDay" type="xsd:string" />
+      <xsd:element name="NextDay" type="xsd:dateTime" />
       <xsd:element name="BankIdType" type="aval:OpenEnum_Type" />
       <xsd:element name="IssDt" type="xsd:dateTime" />
       <xsd:element name="StatusDesc" type="xsd:string" />
@@ -340,7 +340,7 @@
       <xsd:element name="Name" type="xsd:string" />
       <xsd:element name="ChkNum" type="xsd:string" />
       <xsd:element name="BranchName" type="xsd:string" />
-      <xsd:element name="ClientDt" type="xsd:string" />
+      <xsd:element name="ClientDt" type="xsd:dateTime" />
       <xsd:element name="RqUID" type="aval:UUID_Type" />
       <xsd:element name="CurRate" type="xsd:decimal" />
     </xsd:schema>
