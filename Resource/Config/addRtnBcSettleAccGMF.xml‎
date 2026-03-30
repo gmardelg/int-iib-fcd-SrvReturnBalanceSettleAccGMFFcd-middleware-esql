@@ -9,6 +9,7 @@
 			<precall>
 				<name>SrvReturnBalanceSettleAccGMF</name>
 				<protocol>JMS</protocol>
+                <baseURL>https://10.213.130.25:55654</baseURL>
 				<nameProvider>FLEXCUBE</nameProvider>
 				<queueName>MQINP.RTNBALANCESETTLEACC.FC.REQ</queueName>
 			</precall>
