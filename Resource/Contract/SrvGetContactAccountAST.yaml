@@ -370,8 +370,8 @@ components:
       type: object
       properties:
         StatusCode:
-          maxLength: 5
-          minLength: 4
+          maxLength: 9
+          minLength: 1
           type: string
           description: Codigo de respuesta
           example: "0"
