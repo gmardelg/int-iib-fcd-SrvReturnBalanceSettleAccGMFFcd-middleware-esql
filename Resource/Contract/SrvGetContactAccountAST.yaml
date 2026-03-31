@@ -337,7 +337,7 @@ components:
     GetContactAccountRequest:
       type: object
       properties:
-        ContactInfo:
+        ContactInfi:
           $ref: '#/components/schemas/ContactInfo'
     GetContactAccountResponse:
       type: object
@@ -464,7 +464,7 @@ components:
     ContactInfo:
       type: object
       properties:
-        ContactId:
+        ContactIda:
           type: integer
           maximum: 9999999999
           minimum: 1
