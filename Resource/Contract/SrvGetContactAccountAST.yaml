@@ -399,7 +399,11 @@ components:
           example: Transaccion Exitosa (o Transaccion rechazada en caso de error)
         AdditionalStatus:
           $ref: '#/components/schemas/AdditionalStatus'
-
+        EndDt:
+          type: string
+          description: "Indica fecha de finalizacion, terminacion, etc."
+          format: date-time
+          example: 2026-03-05T15:22:30
     AdditionalStatus:
       type: object
       properties:
