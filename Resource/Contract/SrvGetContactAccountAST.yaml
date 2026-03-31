@@ -472,8 +472,8 @@ components:
           example: "1"
         ContactName:
           type: string
-          maxLength: 99
-          minLength: 1
+          maxLength: 1
+          minLength: 99
           description: Nombre del contacto
           example: Javier Mendoza
         NickName:
