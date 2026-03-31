@@ -375,12 +375,7 @@ components:
           type: string
           description: Codigo de respuesta
           example: "0"
-        ServerStatusCode:
-          maxLength: 10
-          minLength: 1
-          type: string
-          description: Codigo de respuesta del servidor
-          example: "0"
+
         Severity:
           type: string
           maxLength: 7
