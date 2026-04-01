@@ -228,7 +228,7 @@
       </xsd:complexType>
       <xsd:complexType name="GovIssueIdent_Type">
         <xsd:sequence>
-          <xsd:element minOccurs="1" ref="aval:GovIssueIdentType" />
+          <xsd:element minOccurs="0" ref="aval:GovIssueIdentType" />
           <xsd:element minOccurs="0" ref="aval:IdentSerialNum" />
           <xsd:element minOccurs="0" ref="aval:GovOrg" />
           <xsd:element minOccurs="0" ref="aval:GovOrgName" />
