@@ -26,7 +26,7 @@
       <xsd:element name="EndorsementCustomerDepositRq" type="v1:EndorsementCustomerDepositRq_Type" />
       <xsd:complexType name="Jointholders-Del-UidVal_Type">
         <xsd:sequence>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:IdentSerialNum" />
+          <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:IdentSerialNum" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="EndorsementCustomerDepositRq_Type">
@@ -50,7 +50,7 @@
       </xsd:complexType>
       <xsd:complexType name="JointholdersUidName_Type">
         <xsd:sequence>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="Q1:GovIssueIdentType" />
+          <xsd:element maxOccurs="1" minOccurs="0" ref="Q1:GovIssueIdentType" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="EndorsementCustomerDepositRs_Type">
