@@ -8,6 +8,7 @@
     <queueName>MQINP.MODIFYOVERDRAFTLINE.FC.REQ</queueName>
     <protocol>JMS</protocol>
     <nameProvider>Flexcube</nameProvider>
+    <baseURL>https://10.213.130.25:55654</baseURL>
    </service>
   </serviceParams>
   <notificationEmail>
