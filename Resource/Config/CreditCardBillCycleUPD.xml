@@ -1,0 +1,48 @@
+<srvConfiguration>
+	<service>
+		<type>DYNAMIC.ROUTE</type>
+		<name>CreditCardBillCycleUPD</name>
+		<serviceStatus>1</serviceStatus>
+		<nameProvider>Fiserv</nameProvider>
+		<queueName>MQINP.CREDITCARDBILLCYCLEUPD.BILLINGCYCLE.FD.REQ</queueName>
+		<protocol>MQ</protocol>
+		<notificationEmail>
+			<to>notificationesb@bancopopular.com.co</to>
+			<cc>notificationesb@bancopopular.com.co</cc>
+			<subject>Notificación de error</subject>
+			<body>Mensaje generado automáticamente Bus de Servicios.</body>
+			<numPerHours>1</numPerHours>
+		</notificationEmail>
+		<priority>8</priority>
+		<maskMessageAct>1</maskMessageAct>
+		<maskMessage>
+			<log1>
+				<fields>
+					<field>
+						<idService>SrvCreditCardBillCycleUPDSoap_Fcd</idService>
+						<type>XML</type>
+						<path>*:CreditCardBillCycleUPDRequest.*:CreditCardBillCycleUPDRq.*:DataRq.*:AccountNumber</path>
+						<method>accountNumber</method>
+					</field>			
+				</fields>
+			</log1>
+			<log2>
+				<fields>         
+					<field>
+						<idService>SrvCreditCardBillCycleUPDFirstData</idService>
+						<type>XML</type>
+						<path>*:VMX_ROOT.VMX_MSGIN.ACCT_NBR</path>
+						<method>accountNumber</method>
+					</field>		  					
+					<field>
+                        <idService>AdapterFirstData</idService>
+                        <type>XML</type>
+                        <path>*:VMX_ROOT.VMX_MSGIN.ACCT_NBR</path>
+                        <method>accountNumber</method>
+                    </field>
+				</fields>
+			</log2>			
+		</maskMessage>
+	</service>
+</srvConfiguration>
+
